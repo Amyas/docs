@@ -1,5 +1,8 @@
 name: A-TO-B:MASTER
-on: [push]
+on: 
+  push:
+    branches:
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -8,10 +11,10 @@ jobs:
       uses: actions/checkout@master
 
     - name: Build and Deploy
-      uses: jenkey2011/vuepress-deploy@master
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with: 
+
       env:
-        ACCESS_TOKEN: ${{ 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 }}
-        TARGET_REPO: amyas/amyas.github.io
-        TARGET_BRANCH: master
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BUILD_SCRIPT: yarn && yarn build
         BUILD_DIR: docs/.vuepress/dist/
