@@ -11,7 +11,7 @@ jobs:
       uses: jenkey2011/vuepress-deploy@v1.8.1
       env:
         ACCESS_TOKEN: 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
-        TARGET_REPO: amyas/amyas.github.io
+        TARGET_REPO: Amyas/amyas.github.io
         TARGET_BRANCH: master
         BUILD_SCRIPT: yarn && yarn build
         BUILD_DIR: docs/.vuepress/dist/
